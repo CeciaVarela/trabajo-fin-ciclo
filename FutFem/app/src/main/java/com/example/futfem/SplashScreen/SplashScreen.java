@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.futfem.InicioPantalla.InicioActivity;
 import com.example.futfem.R;
 
 public class SplashScreen extends AppCompatActivity {
@@ -29,8 +30,8 @@ public class SplashScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                //Intent dsp = new Intent(context, InicioActivity.class);
-                //startActivity(dsp);
+                Intent dsp = new Intent(context, InicioActivity.class);
+                startActivity(dsp);
                 finish();
             }
         },4000);
