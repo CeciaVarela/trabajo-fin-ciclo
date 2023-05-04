@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_api import endpoints_health
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('health', endpoints_health.health),
 ]
