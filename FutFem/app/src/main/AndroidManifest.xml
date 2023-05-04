@@ -32,6 +32,10 @@
             android:name=".RegistroPantalla.RegisterActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".LoginPantalla.LoginActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

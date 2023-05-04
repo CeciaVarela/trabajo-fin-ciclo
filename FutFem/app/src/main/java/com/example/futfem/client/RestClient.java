@@ -55,5 +55,24 @@ public class RestClient {
         this.queue.add(request);
     }
 
+    public void loginUser(String email, String password, Response.Listener<JSONObject>listenerLogin, Response.ErrorListener errorListenerLogin){
+        JSONObject dataUser = new JSONObject();
+        try {
+            dataUser.put("email", email);
+            dataUser.put("password", password);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+        JsonObjectRequest request = new JsonObjectRequest(
+                Request.Method.POST,
+                BASE_URL + "/v1/sessions",
+                dataUser,
+                listenerLogin,
+                errorListenerLogin
+        );
+
+        this.queue.add(request);
+    }
+
 
 }

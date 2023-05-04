@@ -65,8 +65,13 @@ public class RegisterActivity extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Toast.makeText(context, "El usuario fue creado con éxito" , Toast.LENGTH_LONG).show();
-                        finish();
+                        if (response.length() > 0) {
+                            Toast.makeText(context, "El email ya está registrado", Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(context, "El usuario fue creado con éxito" , Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+
                     }
                 },
                 new Response.ErrorListener() {
