@@ -28,6 +28,10 @@
             android:name=".InicioPantalla.InicioActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".RegistroPantalla.RegisterActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

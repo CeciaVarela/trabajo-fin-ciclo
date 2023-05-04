@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.futfem.R;
+import com.example.futfem.RegistroPantalla.RegisterActivity;
 
 public class InicioActivity extends AppCompatActivity {
 
@@ -41,8 +42,8 @@ public class InicioActivity extends AppCompatActivity {
         buttonRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent myIntent = new Intent(context, RegisterActivity.class);
-                //context.startActivity(myIntent);
+                Intent myIntent = new Intent(context, RegisterActivity.class);
+                context.startActivity(myIntent);
             }
         });
 
