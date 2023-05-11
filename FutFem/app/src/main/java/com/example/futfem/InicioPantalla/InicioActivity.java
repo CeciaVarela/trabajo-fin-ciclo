@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.futfem.HomeActivityDrawer.MainActivityDrawer;
 import com.example.futfem.LoginPantalla.LoginActivity;
 import com.example.futfem.R;
 import com.example.futfem.RegistroPantalla.RegisterActivity;
@@ -51,8 +52,8 @@ public class InicioActivity extends AppCompatActivity {
         continuarSinRegistrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent myIntent = new Intent(context, MainActivityDrawer.class);
-                //context.startActivity(myIntent);
+                Intent myIntent = new Intent(context, MainActivityDrawer.class);
+                context.startActivity(myIntent);
             }
         });
     }
