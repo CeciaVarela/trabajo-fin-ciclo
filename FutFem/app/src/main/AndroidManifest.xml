@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FutFem"
         tools:targetApi="31">
-
+        <activity
+            android:name=".DetalleActivityPrueba"
+            android:exported="false" />
         <activity
             android:name=".SplashScreen.SplashScreen"
             android:exported="true">
@@ -23,23 +25,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".InicioPantalla.InicioActivity"
             android:exported="false" />
-
         <activity
             android:name=".RegistroPantalla.RegisterActivity"
             android:exported="false" />
-
         <activity
             android:name=".LoginPantalla.LoginActivity"
             android:exported="false" />
-
         <activity
             android:name=".HomeActivityDrawer.MainActivityDrawer"
             android:exported="false" />
-
     </application>
 
 </manifest>
