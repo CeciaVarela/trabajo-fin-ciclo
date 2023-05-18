@@ -31,6 +31,6 @@ public class TipoEquipoHolder extends RecyclerView.ViewHolder{
 
     public void showData(TipoEquipo equipo) {
         this.textName.setText(equipo.getNombreEquipo());
-        UtilEquipos.downloadBitmapToImageView(equipo.getFotoEscudo(), this.imageView);
+        UtilEquipos.downloadBitmapToImageView(equipo.getPhotoEscudo(), this.imageView);
     }
 }

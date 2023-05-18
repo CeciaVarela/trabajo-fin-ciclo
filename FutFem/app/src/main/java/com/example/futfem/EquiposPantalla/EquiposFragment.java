@@ -34,13 +34,6 @@ public class EquiposFragment extends Fragment {
     private TipoEquipoList equipos;
     private RecyclerView recyclerView;
 
-    public void setEquipos(TipoEquipoList equipos){
-        this.equipos = equipos;
-        TipoEquipoAdapter myAdapter = new TipoEquipoAdapter(this.equipos);
-        recyclerView.setAdapter(myAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -48,10 +41,17 @@ public class EquiposFragment extends Fragment {
         return view;
     }
 
+    public void setEquipos(TipoEquipoList equipos){
+        this.equipos = equipos;
+        TipoEquipoAdapter myAdapter = new TipoEquipoAdapter(this.equipos);
+        recyclerView.setAdapter(myAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
-        this.queue = Volley.newRequestQueue(context);
+        this.queue = Volley.newRequestQueue(view.getContext());
         this.mainLayout = view.findViewById(R.id.main_layout);
         this.progressBar = view.findViewById(R.id.progressBar);
         this.recyclerView = view.findViewById(R.id.recyclerview);
@@ -59,16 +59,21 @@ public class EquiposFragment extends Fragment {
         requestEquipos();
     }
 
+    public TipoEquipoList getEquipos() {
+        return equipos;
+    }
+
     private void requestEquipos(){
         progressBar.setVisibility(View.VISIBLE);
         JsonArrayRequest request = new JsonArrayRequest(
                 Request.Method.GET,
-                "http://10.0.2.2:8000" + "/v1/equipos",
+                "http://10.0.2.2:8000"+"/v1/equipos",
                 null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
                         progressBar.setVisibility(View.INVISIBLE);
+                        //Snackbar.make(mainLayout, "Clips received", Snackbar.LENGTH_SHORT).show();
                         setEquipos(new TipoEquipoList(response));
                     }
                 }, new Response.ErrorListener() {

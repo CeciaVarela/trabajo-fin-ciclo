@@ -6,12 +6,12 @@ import org.json.JSONObject;
 public class TipoEquipo {
     private int id;
     private String nombreEquipo;
-    private String fotoEscudo;
+    private String photoEscudo;
 
     public TipoEquipo(JSONObject json) throws JSONException {
         this.id = json.getInt("id");
         this.nombreEquipo = json.getString("nombreEquipo");
-        this.fotoEscudo = json.getString("fotoEscudo");
+        this.photoEscudo = json.getString("photoEscudo");
     }
 
     public int getId() {
@@ -22,7 +22,8 @@ public class TipoEquipo {
         return nombreEquipo;
     }
 
-    public String getFotoEscudo() {
-        return fotoEscudo;
+    public String getPhotoEscudo() {
+        return photoEscudo;
     }
+
 }

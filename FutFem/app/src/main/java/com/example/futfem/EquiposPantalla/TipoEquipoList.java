@@ -10,20 +10,20 @@ import java.util.List;
 public class TipoEquipoList {
     private List<TipoEquipo> equipos;
 
-    public TipoEquipoList(JSONArray array){
+    public TipoEquipoList(JSONArray array) {
         equipos = new ArrayList<>();
-        for(int i = 0; i < array.length(); i++){
-            try{
+        for (int i = 0; i < array.length(); i++) {
+            try {
                 JSONObject jsonElement = array.getJSONObject(i);
                 TipoEquipo aEquipo = new TipoEquipo(jsonElement);
                 equipos.add(aEquipo);
-            }catch (JSONException e){
+            } catch (JSONException e) {
                 throw new RuntimeException(e);
             }
         }
     }
 
-    public List<TipoEquipo> getEquipos(){
+    public List<TipoEquipo> getEquipos() {
         return equipos;
     }
 }
