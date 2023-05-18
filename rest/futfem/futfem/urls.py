@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from rest_api import endpoints_health
+from rest_api import endpoints_health, endpoints
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('health', endpoints_health.health),
+    path('v1/equipos', endpoints.equipos)
 ]
