@@ -20,5 +20,8 @@ from rest_api import endpoints_health, endpoints
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('health', endpoints_health.health),
-    path('v1/equipos', endpoints.equipos)
+    path('v1/equipos', endpoints.equipos),
+    path('v1/equipos/<int:equipo_id>/jugadoras', endpoints.list_jugadoras),
 ]
+
+
