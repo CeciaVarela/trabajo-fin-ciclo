@@ -9,11 +9,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.futfem.DetalleEquipoPantalla.DetalleEquipo;
+import com.example.futfem.DetalleEquipoPantalla.TipoDetalleEquipo;
+import com.example.futfem.JugadorasPantalla.JugadorasActivity;
+import com.example.futfem.JugadorasPantalla.TipoJugadora;
 import com.example.futfem.R;
 
 public class TipoEquipoHolder extends RecyclerView.ViewHolder{
     private TextView textName;
     private ImageView imageView;
+
+    private TipoDetalleEquipo tipoDetalleEquipo;
+
+    //Quitar
+    private TipoJugadora tipoJugadora;
 
     public TipoEquipoHolder(@NonNull View itemView){
         super(itemView);
@@ -22,8 +31,17 @@ public class TipoEquipoHolder extends RecyclerView.ViewHolder{
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                //int id = tipoDetalleEquipo.getId();
+//                String equipoName = tipoDetalleEquipo.getNombreEquipo();
+//                Context context = view.getContext();
+//                Intent intent = new Intent(context, DetalleEquipo.class);
+//                intent.putExtra(DetalleEquipo.CAMPO_ID_DETALLE,equipoName);
+//                context.startActivity(intent);
+                int equipoId = tipoJugadora.getId();
                 Context context = view.getContext();
-                Intent intent = new Intent(context, DetalleActivityPrueba.class);
+                Intent intent;
+                intent = new Intent(context, JugadorasActivity.class);
+                intent.putExtra(JugadorasActivity.CAMPO_ID_EQUIPO, equipoId);
                 context.startActivity(intent);
             }
         });

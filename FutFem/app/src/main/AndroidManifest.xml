@@ -8,14 +8,20 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.FutFem"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".EquiposPantalla.DetalleActivityPrueba"
+            android:name=".JugadorasPantalla.JugadorasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleEquipoPantalla.PantallaPrueba"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleEquipoPantalla.DetalleEquipo"
             android:exported="false" />
         <activity
             android:name=".SplashScreen.SplashScreen"

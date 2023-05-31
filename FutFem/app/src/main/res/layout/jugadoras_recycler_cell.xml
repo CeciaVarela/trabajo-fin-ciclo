@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageViewJugadora"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/eibar" />
+
+    <TextView
+        android:id="@+id/textViewJugadora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre Jugador"
+        android:layout_marginLeft="18dp"
+        android:textSize="20dp"
+        android:fontFamily="@font/roboto_bold"/>
+
+    <TextView
+        android:id="@+id/textViewPosicion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Posicion Jugadora"
+        android:layout_marginLeft="20dp"
+        android:textSize="15dp"
+        android:fontFamily="@font/roboto_bold"/>
+
+
+
+</LinearLayout>
