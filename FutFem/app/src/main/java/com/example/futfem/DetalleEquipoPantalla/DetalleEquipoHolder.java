@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.futfem.JugadorasPantalla.JugadorasActivity;
 import com.example.futfem.R;
 
 public class DetalleEquipoHolder extends RecyclerView.ViewHolder{
@@ -23,6 +24,8 @@ public class DetalleEquipoHolder extends RecyclerView.ViewHolder{
     private TextView textEstadioLinear;
     private TextView textAnoLinear;
     private TextView textEntrenadorLinear;
+
+    private DetalleEquipo detalle;
 
     public DetalleEquipoHolder(@NonNull View itemView){
         super(itemView);
@@ -41,14 +44,17 @@ public class DetalleEquipoHolder extends RecyclerView.ViewHolder{
         botonJugadoras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int detalleId = detalle.getId();
                 Context context = view.getContext();
                 Intent intent = new Intent(context, JugadorasActivity.class);
+                intent.putExtra(JugadorasActivity.CAMPO_ID_JUGADORA,detalleId);
                 context.startActivity(intent);
             }
         });
     }
 
     public void showData(DetalleEquipo detalleEquipo) {
+        this.detalle = detalleEquipo;
         this.textNombreEquipo.setText(detalleEquipo.getNombreEquipo());
         this.textNombreEstadio.setText(detalleEquipo.getEstadio());
         this.textAnoFundacion.setText(detalleEquipo.getAnoFundacion());

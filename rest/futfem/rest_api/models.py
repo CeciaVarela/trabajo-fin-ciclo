@@ -21,6 +21,7 @@ class Jugadoras (models.Model):
     photoJugadora = models.CharField(max_length=150)
     numeroJugadora = models.CharField(max_length=150)
     idEquipo = models.ForeignKey(Equipos,on_delete=models.CASCADE)
+    posicionJugadora = models.CharField(max_length=150)
 
 
 class Clasificacion (models.Model):
