@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/morado"
+    tools:context=".DetalleEquipoPantalla.DetalleActivity">
+
+    <FrameLayout
+        android:id="@+id/flImagenPrincipal"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imagenCampo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/imagenEscudo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/nombreEquipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+             />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/informacion"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="35dp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flImagenPrincipal"
+        android:background="@color/morado">
+
+        <LinearLayout
+            android:id="@+id/estadioLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/nombreEstadioLinear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estadio:"
+                android:textSize="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/nombreEstadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:paddingStart="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/anoLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/anoFundacionLinear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Año fundación:"
+                android:textSize="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/anoFundacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:paddingStart="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/entrernadorLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/entrenadorLinear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Entrenador/a:"
+                android:textSize="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/entrenador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:paddingStart="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonJugadoras"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:text="Jugadoras"
+        android:textColor="@color/morado"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/informacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.6"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
