@@ -9,11 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.futfem.DetalleEquipoPantalla.DetalleActivity;
 import com.example.futfem.R;
 
 public class TipoEquipoHolder extends RecyclerView.ViewHolder{
     private TextView textName;
     private ImageView imageView;
+    private TipoEquipo equipo;
 
     public TipoEquipoHolder(@NonNull View itemView){
         super(itemView);
@@ -22,14 +24,17 @@ public class TipoEquipoHolder extends RecyclerView.ViewHolder{
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int equipoId = equipo.getId();
                 Context context = view.getContext();
-                Intent intent = new Intent(context, DetalleActivityPrueba.class);
+                Intent intent = new Intent(context, DetalleActivity.class);
+                intent.putExtra(DetalleActivity.CAMPO_ID_EQUIPO,equipoId);
                 context.startActivity(intent);
             }
         });
     }
 
     public void showData(TipoEquipo equipo) {
+        this.equipo = equipo;
         this.textName.setText(equipo.getNombreEquipo());
         UtilEquipos.downloadBitmapToImageView(equipo.getPhotoEscudo(), this.imageView);
     }
