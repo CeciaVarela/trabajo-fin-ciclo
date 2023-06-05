@@ -23,4 +23,5 @@ urlpatterns = [
     path('v1/equipos', endpoints.equipos),
     path('v1/equipos/<int:equipo_id>/', endpoints.detalle),
     path('v1/equipos/<int:equipo_id>/jugadoras', endpoints.list_jugadoras),
+    path('v1/clasificacion', endpoints.clasificacion),
 ]

@@ -16,6 +16,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import com.example.futfem.ClasificacionPantalla.ClasificacionFragment;
 import com.example.futfem.EquiposPantalla.EquiposFragment;
 import com.example.futfem.InicioPantalla.InicioActivity;
 import com.example.futfem.R;
