@@ -23,6 +23,8 @@ public class TipoJugadoraHolder extends RecyclerView.ViewHolder {
         imageViewJugadora = itemView.findViewById(R.id.imageViewJugadora);
     }
 
+
+    //Mostrar los datos de una jugadora específica.
     public void showData(TipoJugadora jugadora){
         this.textViewNombre.setText(jugadora.getNombreJugadora());
         this.textViewPosicion.setText(jugadora.getPosicionJugadora());

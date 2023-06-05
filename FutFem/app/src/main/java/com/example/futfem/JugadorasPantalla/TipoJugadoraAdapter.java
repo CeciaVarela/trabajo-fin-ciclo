@@ -16,6 +16,8 @@ public class TipoJugadoraAdapter extends RecyclerView.Adapter<TipoJugadoraHolder
         this.jugadorasToShow = jugadoras;
     }
 
+
+    //Crear una nueva vista para representar un elemento de datos
     @NonNull
     @Override
     public TipoJugadoraHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
@@ -25,6 +27,8 @@ public class TipoJugadoraAdapter extends RecyclerView.Adapter<TipoJugadoraHolder
         return cellViewHolder;
     }
 
+
+    //Vincular los datos de un elemento de datos a una vista existente.
     @Override
     public void onBindViewHolder(@NonNull TipoJugadoraHolder holder, int position){
         TipoJugadora dataForThisCell = this.jugadorasToShow.getJugadoras().get(position);

@@ -30,8 +30,12 @@ public class DetalleActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
 
 
+
+    //Se define una constante que contiene una cadena de texto.
     public static final String CAMPO_ID_EQUIPO = "TIPO EQUIPO ID";
 
+    //Establece los detalles que se mostrarán en el Recyclerview. Toma una instancia de DetalleEquipoList y
+    //utiliza DetalleEquipoAdapter para mostrar los datos en el Recyclerview.
     public void setDetalles(DetalleEquipoList detalles) {
         this.detalles = detalles;
         DetalleEquipoAdapter myAdapter = new DetalleEquipoAdapter(this.detalles);
@@ -43,7 +47,6 @@ public class DetalleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_equipo);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.queue = Volley.newRequestQueue(context);
         this.mainLayout = findViewById(R.id.main_layout);
         this.progressBar = findViewById(R.id.progress_bar);
