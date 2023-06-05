@@ -37,10 +37,10 @@ public class RestClient {
                               Response.Listener listener, Response.ErrorListener errorListener){
         JSONObject requestBody = new JSONObject();
         try {
-            requestBody.put("name", name);
-            requestBody.put("surname",surname);
-            requestBody.put("user_email", email);
-            requestBody.put("user_password", password);
+            requestBody.put("nombre", name);
+            requestBody.put("apellido",surname);
+            requestBody.put("email", email);
+            requestBody.put("contrasena", password);
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
@@ -55,24 +55,12 @@ public class RestClient {
         this.queue.add(request);
     }
 
-    public void loginUser(String email, String password, Response.Listener<JSONObject>listenerLogin, Response.ErrorListener errorListenerLogin){
-        JSONObject dataUser = new JSONObject();
-        try {
-            dataUser.put("email", email);
-            dataUser.put("password", password);
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
-        JsonObjectRequest request = new JsonObjectRequest(
-                Request.Method.POST,
-                BASE_URL + "/v1/sessions",
-                dataUser,
-                listenerLogin,
-                errorListenerLogin
-        );
+    public void login(JSONObject credentials, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener){
+        String url = BASE_URL + "/v1/sessions";
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, credentials, listener, errorListener);
 
         this.queue.add(request);
     }
-
 
 }

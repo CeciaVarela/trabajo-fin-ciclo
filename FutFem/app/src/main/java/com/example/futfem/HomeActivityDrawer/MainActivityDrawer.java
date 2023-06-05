@@ -101,10 +101,6 @@ public class MainActivityDrawer extends AppCompatActivity implements NavigationV
                 title = "Clasificación";
                 fragment = new ClasificacionFragment();
                 break;
-            case R.id.calendario:
-                title = "Calendario";
-                fragment= new CalendarioFragment();
-                break;
 
         }
         setTitle(title);

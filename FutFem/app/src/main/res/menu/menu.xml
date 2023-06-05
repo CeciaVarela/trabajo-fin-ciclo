@@ -14,8 +14,4 @@
         android:id="@+id/clasificacion"
         android:title="CLASIFICACIÓN"/>
 
-    <item
-        android:id="@+id/calendario"
-        android:title="CALENDARIO"/>
-
 </menu>

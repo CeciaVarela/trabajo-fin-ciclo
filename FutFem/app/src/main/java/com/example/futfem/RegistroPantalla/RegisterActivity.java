@@ -1,7 +1,9 @@
 package com.example.futfem.RegistroPantalla;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.example.futfem.HomeActivityDrawer.HomeFragment;
 import com.example.futfem.R;
 import com.example.futfem.client.RestClient;
 
@@ -69,6 +72,8 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(context, "El email ya está registrado", Toast.LENGTH_LONG).show();
                         }else{
                             Toast.makeText(context, "El usuario fue creado con éxito" , Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(context, HomeFragment.class);
+                            context.startActivity(intent);
                             finish();
                         }
 
@@ -87,6 +92,4 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 });
     }
-
-
 }
