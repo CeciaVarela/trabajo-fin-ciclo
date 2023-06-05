@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 
-from rest_api.models import Equipos, Jugadoras
+from rest_api.models import Equipos, Jugadoras, Clasificacion
 
 
 def equipos(request):
@@ -55,3 +55,21 @@ def list_jugadoras(request,equipo_id):
                          })
     return JsonResponse(response, safe=False, status=200)
 
+
+def clasificacion(request):
+    if request.method != 'GET':
+        return JsonResponse({"error": "Método no aceptado."}, status=405)
+    response = []
+    for clasificacion in Clasificacion.objects.all():
+        response.append({
+            "nombreEquipo": clasificacion.nombreEquipo,
+            "points": clasificacion.points,
+            "partidosJugador": clasificacion.partidosJugador,
+            "partidosGanados": clasificacion.partidosGanados,
+            "partidosEmpatados": clasificacion.partidosEmpatados,
+            "partidosPerdidos": clasificacion.partidosPerdidos,
+            "golesFavor": clasificacion.golesFavor,
+            "golesContra": clasificacion.golesContra,
+            "id": clasificacion.id,
+        })
+    return JsonResponse(response, safe=False, status=200)
