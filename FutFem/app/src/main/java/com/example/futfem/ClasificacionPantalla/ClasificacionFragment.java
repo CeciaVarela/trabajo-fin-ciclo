@@ -41,6 +41,8 @@ public class ClasificacionFragment extends Fragment {
         return view;
     }
 
+    //Establece las clasificaciones que se mostrarán en el Recyclerview. Toma una instancia de TipoClasificacionList y
+    // utiliza TipoClasificacionAdapter para mostrar los datos en el Recyclerview.
     public void setClasificaciones(TipoClasificacionList clasificaciones) {
         this.clasificaciones = clasificaciones;
         TipoClasificacionAdapter myAdapter = new TipoClasificacionAdapter(this.clasificaciones);
@@ -48,10 +50,13 @@ public class ClasificacionFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
     }
 
+    //Devuelve las clasificaciones actuales
     public TipoClasificacionList getClasificaciones() {
         return clasificaciones;
     }
 
+
+    //Se inicializan las variables miembro y se realiza una solicitud para obtener las clasificaciones
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
@@ -63,6 +68,8 @@ public class ClasificacionFragment extends Fragment {
         requestClasificacion();
     }
 
+
+    //Se realiza una solicitud GET a la URL especificada
     private void requestClasificacion(){
         progressBar.setVisibility(View.VISIBLE);
         JsonArrayRequest request = new JsonArrayRequest(

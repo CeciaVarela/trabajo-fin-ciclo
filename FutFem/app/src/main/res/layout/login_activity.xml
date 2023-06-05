@@ -53,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/contraseña"
+        android:id="@+id/contrasena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -64,7 +64,7 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:hint="Contraseña"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
@@ -83,7 +83,7 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contraseña"/>
+        app:layout_constraintTop_toBottomOf="@+id/contrasena"/>
 
     <TextView
         android:id="@+id/registro"

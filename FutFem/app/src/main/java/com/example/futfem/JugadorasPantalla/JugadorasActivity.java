@@ -29,8 +29,12 @@ public class JugadorasActivity extends AppCompatActivity {
     private TipoJugadoraList jugadoras;
     private RecyclerView recyclerView;
 
+
+    //Se define una constante llamada que contiene una cadena de texto.
     public static final String CAMPO_ID_JUGADORA = "TIPO JUGADORA ID";
 
+    //Establece las jugadoras que se mostrarán en el Recyclerview. Toma una instancia de TipoJugadoraList y
+    // utiliza TipoJugadoraAdapter para mostrar los datos en el Recyclerview.
     public void setJugadoras(TipoJugadoraList jugadoras) {
         this.jugadoras = jugadoras;
         TipoJugadoraAdapter myAdapter = new TipoJugadoraAdapter(this.jugadoras);

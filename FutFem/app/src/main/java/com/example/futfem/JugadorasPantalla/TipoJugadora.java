@@ -10,7 +10,6 @@ public class TipoJugadora {
     private String photoJugadora;
     private String numeroJugadora;
     private String posicionJugadora;
-//    private int idEquipo;
 
     public TipoJugadora (JSONObject json) throws JSONException {
         this.id = json.getInt("id");
@@ -18,7 +17,6 @@ public class TipoJugadora {
         this.photoJugadora = json.getString("photoJugadora");
         this.numeroJugadora = json.getString("numeroJugadora");
         this.posicionJugadora = json.getString("posicionJugadora");
-//        this.idEquipo = json.getInt("idEquipo");
     }
 
     public int getId() {
@@ -41,7 +39,4 @@ public class TipoJugadora {
         return posicionJugadora;
     }
 
-//    public int getIdEquipo() {
-//        return idEquipo;
-//    }
 }
