@@ -41,6 +41,8 @@ public class EquiposFragment extends Fragment {
         return view;
     }
 
+    //Establece los equipos que se mostrarán en el Recyclerview. Toma una instancia de TipoEquipolist y
+    // utiliza TipoEquipoAdapter para mostrar los datos en el Recyclerview.
     public void setEquipos(TipoEquipoList equipos){
         this.equipos = equipos;
         TipoEquipoAdapter myAdapter = new TipoEquipoAdapter(this.equipos);

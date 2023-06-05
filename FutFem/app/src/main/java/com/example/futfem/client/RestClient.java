@@ -33,6 +33,7 @@ public class RestClient {
     }
 
 
+    //Método para registrar un nuevo usuario en el servidor
     public void registerUser(String name, String surname, String email, String password,
                               Response.Listener listener, Response.ErrorListener errorListener){
         JSONObject requestBody = new JSONObject();
@@ -55,6 +56,8 @@ public class RestClient {
         this.queue.add(request);
     }
 
+
+    //Método para iniciar sesión en el servidor
     public void login(JSONObject credentials, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener){
         String url = BASE_URL + "/v1/sessions";
 

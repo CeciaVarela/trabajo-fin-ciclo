@@ -26,7 +26,9 @@ public class TipoEquipoHolder extends RecyclerView.ViewHolder{
             public void onClick(View view) {
                 int equipoId = equipo.getId();
                 Context context = view.getContext();
+                //Llamar a la actividad
                 Intent intent = new Intent(context, DetalleActivity.class);
+                //Agrega este extra al intent y se pasa el ID del equipo a la clase DetalleActivity
                 intent.putExtra(DetalleActivity.CAMPO_ID_EQUIPO,equipoId);
                 context.startActivity(intent);
             }

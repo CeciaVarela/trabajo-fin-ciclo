@@ -19,7 +19,6 @@ public class TipoClasificacionHolder extends RecyclerView.ViewHolder{
     private TextView textViewPerdidos;
     private TextView textViewAFavor;
     private TextView textViewEnContra;
-    private View itemView;
 
     public TipoClasificacionHolder(@NonNull View itemView){
         super(itemView);

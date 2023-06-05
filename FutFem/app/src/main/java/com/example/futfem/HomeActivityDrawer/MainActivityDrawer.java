@@ -67,6 +67,8 @@ public class MainActivityDrawer extends AppCompatActivity implements NavigationV
 
     }
 
+
+    //Configuración de la vista de navegación
     private void setupNavigationView() {
         navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -75,6 +77,8 @@ public class MainActivityDrawer extends AppCompatActivity implements NavigationV
         menuItem.setChecked(true);
     }
 
+
+    //Controlar el comportamiento del botón de retroceso
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -84,6 +88,8 @@ public class MainActivityDrawer extends AppCompatActivity implements NavigationV
         }
     }
 
+
+    //Cuando seleccionamos un elemento de Drawer se ejecuta para mostrar el fragment correspondiente
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         String title = "";
